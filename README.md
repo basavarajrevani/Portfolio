@@ -60,7 +60,7 @@ portfolio/
 
 ## 🌐 Live Demo
 
-Visit the live portfolio: [Your Portfolio URL]
+Visit the live portfolio: [https://basavarajrevani.github.io/Portfolio/]
 
 ## 📧 Contact
 
