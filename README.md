@@ -60,7 +60,7 @@ portfolio/
 
 ## 🌐 Live Demo
 
-Visit the live portfolio: [Your Portfolio URL]
+Visit the live portfolio: [https://basavarajrevani.github.io/Portfolio/]
 
 ## 📧 Contact
 
@@ -68,14 +68,7 @@ Visit the live portfolio: [Your Portfolio URL]
 - **LinkedIn**: [linkedin.com/in/basavarajrevani](https://www.linkedin.com/in/basavarajrevani)
 - **GitHub**: [github.com/basavarajrevani](https://github.com/basavarajrevani)
 - **YouTube**: [AI Hustle Hub](https://youtube.com/@aihustlehub-m4t)
-
-## 🎯 Key Highlights
-
-- 🏆 Secured 1st place in Frontend Frenzy Interactive Storytelling event
-- 🥈 Secured 2nd position in UI/UX Competition at college Technical Fest
-- 🔝 Top 10 among 100+ teams in Hackphasia National Level Hackathon
-- 📚 Solved 200+ problems on GeeksforGeeks and LeetCode
-- 🎥 YouTube channel with 200+ subscribers and 10,000+ views
+- 🎥 YouTube channel 95+ videos with 220+ subscribers and 15,000+ views
 
 ## 📄 License
 
