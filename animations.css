@@ -1,0 +1,416 @@
+/* Advanced Animations and Visual Effects */
+/* This file contains cutting-edge CSS animations for modern portfolios */
+
+/* Cyberpunk/Matrix-style Text Effects */
+.matrix-text {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.matrix-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--neon-primary) 50%, 
+        transparent 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: matrixScan 3s infinite;
+}
+
+@keyframes matrixScan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Hologram Effect */
+.hologram {
+    position: relative;
+    background: linear-gradient(45deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        transparent 50%, 
+        rgba(255, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    animation: hologramFlicker 4s infinite;
+}
+
+.hologram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 255, 255, 0.3) 50%, 
+        transparent 100%);
+    transform: translateX(-100%);
+    animation: hologramSweep 2s infinite;
+}
+
+@keyframes hologramFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+@keyframes hologramSweep {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Neon Border Animation */
+.neon-border {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, var(--bg-dark), var(--bg-darker)) padding-box,
+                linear-gradient(45deg, var(--neon-primary), var(--neon-secondary), var(--neon-primary)) border-box;
+    animation: neonBorderRotate 4s linear infinite;
+}
+
+@keyframes neonBorderRotate {
+    0% {
+        background: linear-gradient(45deg, var(--bg-dark), var(--bg-darker)) padding-box,
+                    linear-gradient(0deg, var(--neon-primary), var(--neon-secondary), var(--neon-primary)) border-box;
+    }
+    25% {
+        background: linear-gradient(45deg, var(--bg-dark), var(--bg-darker)) padding-box,
+                    linear-gradient(90deg, var(--neon-primary), var(--neon-secondary), var(--neon-primary)) border-box;
+    }
+    50% {
+        background: linear-gradient(45deg, var(--bg-dark), var(--bg-darker)) padding-box,
+                    linear-gradient(180deg, var(--neon-primary), var(--neon-secondary), var(--neon-primary)) border-box;
+    }
+    75% {
+        background: linear-gradient(45deg, var(--bg-dark), var(--bg-darker)) padding-box,
+                    linear-gradient(270deg, var(--neon-primary), var(--neon-secondary), var(--neon-primary)) border-box;
+    }
+    100% {
+        background: linear-gradient(45deg, var(--bg-dark), var(--bg-darker)) padding-box,
+                    linear-gradient(360deg, var(--neon-primary), var(--neon-secondary), var(--neon-primary)) border-box;
+    }
+}
+
+/* Glass Morphism Effects */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 16px 64px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 0 30px var(--neon-primary);
+}
+
+/* Liquid Animation */
+.liquid-blob {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary));
+    opacity: 0.6;
+    filter: blur(20px);
+    animation: liquidMove 20s infinite linear;
+}
+
+@keyframes liquidMove {
+    0% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 50%;
+    }
+    25% {
+        transform: translate(50px, -30px) scale(1.2);
+        border-radius: 60% 40% 30% 70%;
+    }
+    50% {
+        transform: translate(-20px, 50px) scale(0.8);
+        border-radius: 30% 60% 70% 40%;
+    }
+    75% {
+        transform: translate(-50px, -20px) scale(1.1);
+        border-radius: 40% 30% 60% 50%;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        border-radius: 50%;
+    }
+}
+
+/* Typewriter with Multiple Lines */
+.multi-typewriter {
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    animation: 
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--neon-primary) }
+}
+
+/* 3D Card Flip Effect */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 300px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.flip-card-front {
+    background: var(--glass-card);
+    color: var(--neon-text);
+}
+
+.flip-card-back {
+    background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary));
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Parallax Scroll Effect */
+.parallax-container {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+.parallax-element {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.parallax-back {
+    transform: translateZ(-1px) scale(2);
+}
+
+.parallax-base {
+    transform: translateZ(0);
+}
+
+/* Morphing Button */
+.morphing-btn {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid var(--neon-primary);
+    color: var(--neon-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.morphing-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--neon-primary);
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.morphing-btn:hover::before {
+    left: 0;
+}
+
+.morphing-btn:hover {
+    color: var(--bg-dark);
+    border-color: var(--neon-secondary);
+    box-shadow: 0 0 30px var(--neon-primary);
+    transform: translateY(-3px);
+}
+
+/* Glowing Orb */
+.glowing-orb {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 255, 255, 0.8), 
+        var(--neon-primary), 
+        var(--neon-secondary));
+    animation: orbPulse 4s ease-in-out infinite;
+    box-shadow: 
+        0 0 50px var(--neon-primary),
+        inset 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
+.glowing-orb::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 30%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    filter: blur(10px);
+    animation: orbHighlight 4s ease-in-out infinite;
+}
+
+@keyframes orbPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 50px var(--neon-primary);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 80px var(--neon-primary);
+    }
+}
+
+@keyframes orbHighlight {
+    0%, 100% {
+        opacity: 0.8;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(5px, 5px);
+    }
+}
+
+/* Scanline Effect */
+.scanlines {
+    position: relative;
+    overflow: hidden;
+}
+
+.scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        transparent 40%, 
+        rgba(255, 255, 255, 0.1) 41%, 
+        rgba(255, 255, 255, 0.1) 42%, 
+        transparent 43%
+    );
+    animation: scanlineMove 2s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanlineMove {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Circuit Board Pattern */
+.circuit-bg {
+    background-image: 
+        linear-gradient(90deg, rgba(255, 31, 31, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(255, 31, 31, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: circuitFlow 10s linear infinite;
+}
+
+@keyframes circuitFlow {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .glowing-orb {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .flip-card {
+        height: 250px;
+    }
+    
+    .liquid-blob {
+        display: none;
+    }
+    
+    .parallax-container {
+        perspective: none;
+    }
+    
+    .parallax-back {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .matrix-text::before,
+    .hologram,
+    .neon-border,
+    .liquid-blob,
+    .glowing-orb,
+    .scanlines::before {
+        animation: none;
+    }
+    
+    .flip-card:hover .flip-card-inner {
+        transform: none;
+    }
+}

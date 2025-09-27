@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basavaraj Revani - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Fira+Code:wght@400;500;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -64,10 +65,10 @@
 
 
     <!-- Education Section -->
-    <section id="education" class="education-section">
-        <h2 class="section-title">Education</h2>
+    <section id="education" class="education-section circuit-bg">
+        <h2 class="section-title matrix-text" data-text="Education">Education</h2>
         <div class="education-container">
-            <div class="education-card">
+            <div class="education-card glass-card">
                 <div class="education-header">
                     <i class="fas fa-graduation-cap"></i>
                     <h3>3rd year Bachelor Of Engineering (BE)</h3>
@@ -84,7 +85,7 @@
                 </div>
             </div>
 
-            <div class="education-card">
+            <div class="education-card glass-card">
                 <div class="education-header">
                     <i class="fas fa-school"></i>
                     <h3>Pre-University (Science)</h3>
@@ -127,8 +128,8 @@
     </section>
 
      <!-- Professional skillset Section -->
-    <section id="tools" class="tools-section">
-        <h2 class="section-title">Professional skillset</h2>
+    <section id="tools" class="tools-section scanlines">
+        <h2 class="section-title hologram">Professional skillset</h2>
         <div class="tools-grid">
 <!-- C++ -->
 <div class="tool-item">
@@ -201,9 +202,9 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title neon-border">Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card glass-card">
                 <img src="dictionary.jpg" alt="dictionary App" class="project-image">
                 <div class="project-content">
                     <h3 class="project-title">Dictionary App</h3>
@@ -214,8 +215,8 @@
                         <span class="tech-tag">JavaScript</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://basavarajrevani.github.io/dictionary-app/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="https://github.com/basavarajrevani" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                        <a href="https://basavarajrevani.github.io/dictionary-app/" class="project-link morphing-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="https://github.com/basavarajrevani" class="project-link morphing-btn"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
             </div>
@@ -639,30 +640,20 @@
         </div>
     </footer> -->
 
-    <footer class="footer">
+    <footer class="footer hologram">
     <section id="contact"></section>
   <div class="footer-content">
     <div class="footer-left">
-      <h3>Build with ❤ By Basavaraj Revani</h3>
+      <h3 class="matrix-text" data-text="Build with ❤ By Basavaraj Revani">Build with ❤ By Basavaraj Revani</h3>
       <p>Learn, Analyze, Innovate, creative.</p>
     </div>
 
-    <!-- <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div> -->
-
     <div class="footer-socials">
       <h4>Connect With Me</h4>
-      <a href="https://www.linkedin.com/in/basavarajrevani" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/basavarajrevani" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:basavarajrevani123@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://youtube.com/@aihustlehub-m4t?si=jG7wv39r5zW14aDC" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.linkedin.com/in/basavarajrevani" target="_blank" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/basavarajrevani" target="_blank" class="footer-social-link"><i class="fab fa-github"></i></a>
+      <a href="mailto:basavarajrevani123@gmail.com" class="footer-social-link"><i class="fas fa-envelope"></i></a>
+      <a href="https://youtube.com/@aihustlehub-m4t?si=jG7wv39r5zW14aDC" target="_blank" class="footer-social-link"><i class="fab fa-youtube"></i></a>
     </div>
   </div>
 
@@ -684,5 +675,6 @@
 {{ ... }}
 
     <script src="script.js"></script>
+    <script src="enhanced-animations.js"></script>
 </body>
 </html>
