@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const theme = btn.dataset.theme;
-            
+
             // Update body class
             document.body.className = theme;
             localStorage.setItem('theme', theme);
@@ -45,6 +45,7 @@ if (mobileMenu && navLinks) {
         const isActive = navLinks.classList.contains('active');
 
         navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
         mobileMenu.querySelector('i').classList.toggle('fa-bars');
         mobileMenu.querySelector('i').classList.toggle('fa-times');
 
@@ -175,7 +176,7 @@ document.querySelectorAll('section').forEach(section => {
 // Form submission handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
         // Add your form submission logic here
         alert('Thank you for your message! I will get back to you soon.');
@@ -194,7 +195,7 @@ skillBars.forEach(bar => {
 });
 
 // Enhanced navbar background change on scroll
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.style.background = 'rgba(0, 0, 0, 0.95)';
@@ -216,13 +217,13 @@ function optimizeImages() {
         }
 
         // Add error handling
-        img.addEventListener('error', function() {
+        img.addEventListener('error', function () {
             console.warn('Failed to load image:', this.src);
             this.style.display = 'none';
         });
 
         // Add load event for fade-in effect
-        img.addEventListener('load', function() {
+        img.addEventListener('load', function () {
             this.style.opacity = '1';
         });
 

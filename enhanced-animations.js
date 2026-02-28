@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all enhanced features
     initializeLoadingAnimation();
+    initializeScrollProgress();
     initializeParticleSystem();
     initializeFloatingShapes();
     initializeCursorEffects();
@@ -16,97 +17,34 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Enhanced Portfolio Animations Loaded Successfully!');
 });
 
-// Loading Animation with Dual-Ring Spinner
-function initializeLoadingAnimation() {
-    const loadingOverlay = document.createElement('div');
-    loadingOverlay.className = 'loading-overlay';
-    loadingOverlay.id = 'loadingOverlay';
-    loadingOverlay.innerHTML = `
-        <div class="loader">
-            <div class="loader-ring"></div>
-            <div class="loader-ring"></div>
-            <div class="loader-text">Loading Portfolio...</div>
-        </div>
-    `;
-    document.body.appendChild(loadingOverlay);
+// Scroll Progress Bar
+function initializeScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress-bar';
+    document.body.appendChild(progressBar);
 
-    // Add loading CSS
-    const loadingCSS = `
-        .loading-overlay {
+    const progressCSS = `
+        .scroll-progress-bar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-        
-        .loading-overlay.fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        .loader {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .loader-ring {
-            width: 60px;
-            height: 60px;
-            border: 3px solid transparent;
-            border-top: 3px solid var(--neon-primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            position: absolute;
-        }
-        
-        .loader-ring:nth-child(2) {
-            width: 80px;
-            height: 80px;
-            border-top: 3px solid var(--neon-secondary);
-            animation: spin 1.5s linear infinite reverse;
-        }
-        
-        .loader-text {
-            font-family: 'Fira Code', monospace;
-            color: var(--neon-primary);
-            font-size: 1.2rem;
-            margin-top: 6rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
+            z-index: 10001;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 10px var(--neon-primary);
         }
     `;
-    
     const style = document.createElement('style');
-    style.textContent = loadingCSS;
+    style.textContent = progressCSS;
     document.head.appendChild(style);
 
-    // Hide loading after page load
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            loadingOverlay.classList.add('fade-out');
-            setTimeout(() => {
-                loadingOverlay.remove();
-            }, 500);
-        }, 1000);
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
     });
 }
 
